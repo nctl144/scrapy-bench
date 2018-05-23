@@ -34,19 +34,19 @@ def main():
         time_file_uri_to_path += (end_file_uri_to_path - start_file_uri_to_path)
         time += (end_file_uri_to_path - start_file_uri_to_path)
 
+    for url in urls:
         start_safe_url_string = timer()
         safe_url_string(url)
         end_safe_url_string = timer()
         time_safe_url_string += (end_safe_url_string - start_safe_url_string)
         time += (end_safe_url_string - start_safe_url_string)
 
+    for url in urls:
         start_canonicalize_url = timer()
         canonicalize_url(url)
         end_canonicalize_url = timer()
         time_canonicalize_url += (end_canonicalize_url - start_canonicalize_url)
         time += (end_canonicalize_url - start_canonicalize_url)
-
-        # any_to_uri(url) # Error on Python 2: KeyError: u'\u9996'
 
         total += 1
 
